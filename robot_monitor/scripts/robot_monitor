@@ -43,7 +43,9 @@ roslib.load_manifest('robot_monitor')
 
 import rospy
 
-WXVER = '2.8'
+import sys
+
+WXVER = ['2.8', '2.9']
 import wxversion
 if wxversion.checkInstalled(WXVER):
   wxversion.select(WXVER)
