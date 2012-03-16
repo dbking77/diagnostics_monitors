@@ -242,6 +242,10 @@ class RobotMonitorPanel(MonitorPanelGenerated):
         # unfortunately tooltips do not work on static text, so this information has to go into the docs only
         #self._message_status_text.SetToolTip(wx.ToolTip("""Shows the status of the received aggregated diagnostic message.
 
+    def Close(self):
+        self._timeline.Close()
+        MonitorPanelGenerated.Close(self)
+
 #If the robot monitor has not received a diagnostic message in more than 10 seconds, this will show an error and the background of the Errors/Warnings/All views will turn grey."""))
 
     ##\brief Sets robot monitor messages status in default start configuration

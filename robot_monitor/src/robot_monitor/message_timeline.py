@@ -176,6 +176,12 @@ class MessageTimeline(wx.Panel):
     def set_message_receipt_callback(self, cb):
         self._message_receipt_callback = cb
         
+    def Close(self):
+        if (self._subscriber is not None):
+            self._subscriber.unregister()
+            self._subscriber = None
+        wx.Panel.Close(self)
+        
     def __del__(self):
         if (self._subscriber is not None):
             self._subscriber.unregister()
