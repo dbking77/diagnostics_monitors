@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Oct 27 2009)
+## Python code generated with wxFormBuilder (version Sep  8 2010)
 ## http://www.wxformbuilder.org/
 ##
 ## PLEASE DO "NOT" EDIT THIS FILE!
@@ -16,7 +16,7 @@ import wx
 class MonitorPanelGenerated ( wx.Panel ):
 	
 	def __init__( self, parent ):
-		wx.Panel.__init__  ( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 500,700 ), style = wx.TAB_TRAVERSAL )
+		wx.Panel.__init__ ( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 500,700 ), style = wx.TAB_TRAVERSAL )
 		
 		bSizer1 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -28,23 +28,43 @@ class MonitorPanelGenerated ( wx.Panel ):
 		self.m_panel3 = wx.Panel( self.m_splitter2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer5 = wx.BoxSizer( wx.VERTICAL )
 		
-		sbSizer3 = wx.StaticBoxSizer( wx.StaticBox( self.m_panel3, wx.ID_ANY, u"Errors" ), wx.VERTICAL )
+		self.m_splitter4 = wx.SplitterWindow( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.SP_3D )
+		self.m_splitter4.SetSashGravity( 0.5 )
+		self.m_splitter4.Bind( wx.EVT_IDLE, self.m_splitter4OnIdle )
+		self.m_splitter4.SetMinimumPaneSize( 100 )
 		
-		self._error_tree_ctrl = wx.TreeCtrl( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.Size( -1,-1 ), wx.TR_DEFAULT_STYLE|wx.TR_HIDE_ROOT )
+		self.m_panel31 = wx.Panel( self.m_splitter4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer51 = wx.BoxSizer( wx.VERTICAL )
+		
+		sbSizer3 = wx.StaticBoxSizer( wx.StaticBox( self.m_panel31, wx.ID_ANY, u"Errors" ), wx.VERTICAL )
+		
+		self._error_tree_ctrl = wx.TreeCtrl( self.m_panel31, wx.ID_ANY, wx.DefaultPosition, wx.Size( -1,-1 ), wx.TR_DEFAULT_STYLE|wx.TR_HIDE_ROOT )
 		self._error_tree_ctrl.SetMinSize( wx.Size( -1,60 ) )
 		
 		sbSizer3.Add( self._error_tree_ctrl, 1, wx.ALL|wx.EXPAND, 5 )
 		
-		bSizer5.Add( sbSizer3, 1, wx.EXPAND, 5 )
+		bSizer51.Add( sbSizer3, 1, wx.EXPAND, 5 )
 		
-		sbSizer2 = wx.StaticBoxSizer( wx.StaticBox( self.m_panel3, wx.ID_ANY, u"Warnings" ), wx.VERTICAL )
+		self.m_panel31.SetSizer( bSizer51 )
+		self.m_panel31.Layout()
+		bSizer51.Fit( self.m_panel31 )
+		self.m_panel41 = wx.Panel( self.m_splitter4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer6 = wx.BoxSizer( wx.VERTICAL )
 		
-		self._warning_tree_ctrl = wx.TreeCtrl( self.m_panel3, wx.ID_ANY, wx.DefaultPosition, wx.Size( -1,-1 ), wx.TR_DEFAULT_STYLE|wx.TR_HIDE_ROOT )
+		sbSizer2 = wx.StaticBoxSizer( wx.StaticBox( self.m_panel41, wx.ID_ANY, u"Warnings" ), wx.VERTICAL )
+		
+		self._warning_tree_ctrl = wx.TreeCtrl( self.m_panel41, wx.ID_ANY, wx.DefaultPosition, wx.Size( -1,-1 ), wx.TR_DEFAULT_STYLE|wx.TR_HIDE_ROOT )
 		self._warning_tree_ctrl.SetMinSize( wx.Size( -1,60 ) )
 		
 		sbSizer2.Add( self._warning_tree_ctrl, 1, wx.ALL|wx.EXPAND, 5 )
 		
-		bSizer5.Add( sbSizer2, 1, wx.EXPAND, 5 )
+		bSizer6.Add( sbSizer2, 1, wx.EXPAND, 5 )
+		
+		self.m_panel41.SetSizer( bSizer6 )
+		self.m_panel41.Layout()
+		bSizer6.Fit( self.m_panel41 )
+		self.m_splitter4.SplitHorizontally( self.m_panel31, self.m_panel41, 240 )
+		bSizer5.Add( self.m_splitter4, 1, wx.EXPAND, 5 )
 		
 		self.m_panel3.SetSizer( bSizer5 )
 		self.m_panel3.Layout()
@@ -85,6 +105,10 @@ class MonitorPanelGenerated ( wx.Panel ):
 		self.m_splitter2.SetSashPosition( 240 )
 		self.m_splitter2.Unbind( wx.EVT_IDLE )
 	
+	def m_splitter4OnIdle( self, event ):
+		self.m_splitter4.SetSashPosition( 240 )
+		self.m_splitter4.Unbind( wx.EVT_IDLE )
+	
 
 ###########################################################################
 ## Class MessageTimelineGenerated
@@ -93,7 +117,7 @@ class MonitorPanelGenerated ( wx.Panel ):
 class MessageTimelineGenerated ( wx.Panel ):
 	
 	def __init__( self, parent ):
-		wx.Panel.__init__  ( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 503,63 ), style = wx.TAB_TRAVERSAL )
+		wx.Panel.__init__ ( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 503,63 ), style = wx.TAB_TRAVERSAL )
 		
 		bSizer4 = wx.BoxSizer( wx.HORIZONTAL )
 		
